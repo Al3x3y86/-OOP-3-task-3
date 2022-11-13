@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Mammals extends Animals {
+public abstract class Mammals extends Animals {
 
     private String habitat;
     private double travelSpeed;
@@ -8,13 +8,15 @@ public class Mammals extends Animals {
 
     public Mammals(String nickname, int year, String habitat, double travelSpeed) {
         super(nickname, year);
-        this.habitat = habitat;
-        this.travelSpeed = travelSpeed;
+        if (habitat == null || habitat.isEmpty() || habitat.isBlank()) {
+            this.habitat = habitat;
+        }
+        if (Double.compare(travelSpeed, 0) <= 0) {
+            this.travelSpeed = travelSpeed;
+        }
     }
 
-    public void walk (){
-        System.out.println("Животные гуляют в близости с местами пропитания ");
-    }
+    public abstract void walk ();
 
     public String getHabitat() {
         return habitat;

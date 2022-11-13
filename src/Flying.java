@@ -15,6 +15,26 @@ public class Flying extends Birds {
                 +getHabitat()  + ", тип передвижения - " + movementType + ".";
     }
 
+    @Override
+    public void eat() {
+        System.out.println("Летающие птицы едят насекомых, грызунов и рыбу.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Летающие птицы передвигаются в поисках еды.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Летающие птицы спят в гнездах.");
+    }
+
+    @Override
+    public void hunt() {
+        System.out.println("Летающие птицы охотятся на насекомых, грызунов и рыбу.");
+    }
+
     public void fly () {
         System.out.println("Полёт является наиболее специфической формой передвижения птиц.");
     }

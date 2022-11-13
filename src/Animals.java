@@ -1,12 +1,15 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Animals {
+public abstract class Animals {
 
     private String nickname;
     private int year;
 
     public Animals(String nickname, int year) {
+        if (nickname == null || nickname.isEmpty() || nickname.isBlank()) {
+            this.nickname = nickname;
+        }
         this.nickname = nickname;
         if ( year < 0  ) {
             this.year = LocalDate.now().getYear() -Math.abs(year);
@@ -14,17 +17,11 @@ public class Animals {
         this.year = year;
     }
 
-    public void eat (){
-        System.out.println("Животные едят");
-    }
+    public abstract void eat ();
 
-    public void move (){
-        System.out.println("Животные перемещаются");
-    }
+    public abstract void move ();
 
-    public void sleep () {
-        System.out.println("Животные спят");
-    }
+    public abstract void sleep ();
 
     public String getNickname() {
         return nickname;

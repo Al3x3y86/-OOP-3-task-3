@@ -6,7 +6,9 @@ public class Amphibians extends Animals {
 
     public Amphibians(String nickname, int year, String habitat) {
         super(nickname, year);
-        this.habitat = habitat;
+        if (habitat == null || habitat.isEmpty() || habitat.isBlank()) {
+            this.habitat = habitat;
+        }
     }
 
     @Override
@@ -14,6 +16,20 @@ public class Amphibians extends Animals {
         return "Земноводные: " + getNickname()+", количество лет-" + getYear()+ ", Среда проживания -" +getHabitat()  + ".";
     }
 
+    @Override
+    public void eat() {
+        System.out.println("Земноводные едят насекомых, моллюсков, червей.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Земноводные передвигаются в поиска еды.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Земноводные спят в безопасных местах.");
+    }
     public void hunt () {
         System.out.println("Земноводные охотятся на насекомых, моллюсков, червей.");
     }

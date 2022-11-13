@@ -1,17 +1,25 @@
 import java.util.Objects;
 
-public class Birds extends Animals {
+public abstract class Birds extends Animals {
 
     private String habitat;
 
     public Birds(String nickname, int year, String habitat) {
         super(nickname, year);
-        this.habitat = habitat;
+        if (habitat == null || habitat.isEmpty() || habitat.isBlank()) {
+            this.habitat = habitat;
+        }
     }
+    @Override
+    public abstract void eat();
 
-    public void hunt () {
-        System.out.println("Птицы в основном охотятся на мелких грызунов и насекомых.");
-    }
+    @Override
+    public abstract void move();
+
+    @Override
+    public abstract void sleep();
+
+    public abstract void hunt ();
 
     public String getHabitat() {
         return habitat;

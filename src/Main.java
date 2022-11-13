@@ -12,6 +12,7 @@ public class Main {
         giraffe.move();
         horse.graze();
         gazelle.walk();
+        giraffe.sleep();
         System.out.println(gazelle.equals(giraffe));
         System.out.println(gazelle.equals(horse));
         System.out.println(horse.equals(giraffe));
@@ -27,6 +28,7 @@ public class Main {
         tiger.move();
         bear.hunt();
         hyena.walk();
+        bear.sleep();
         System.out.println(hyena.equals(tiger));
         System.out.println(hyena.equals(bear));
         System.out.println(tiger.equals(bear));
@@ -53,6 +55,7 @@ public class Main {
         penguin.sleep();
         dodoBird.walk();
         peacock.hunt();
+        dodoBird.move();
         System.out.println(peacock.equals(penguin));
         System.out.println(peacock.equals(dodoBird));
         System.out.println(penguin.equals(dodoBird));
@@ -68,11 +71,10 @@ public class Main {
         albatross.sleep();
         falcon.fly();
         gull.hunt();
+        albatross.move();
         System.out.println(gull.equals(albatross));
         System.out.println(gull.equals(falcon));
         System.out.println(albatross.equals(falcon));
-
-
 
     }
 }

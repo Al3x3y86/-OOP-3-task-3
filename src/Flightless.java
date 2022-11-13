@@ -6,7 +6,9 @@ public class Flightless extends Birds {
 
     public Flightless(String nickname, int year, String habitat, String movementType) {
         super(nickname, year, habitat);
-        this.movementType = movementType;
+        if (movementType == null || movementType.isEmpty() || movementType.isBlank()) {
+            this.movementType = movementType;
+        }
     }
 
     public String toString() {
@@ -14,6 +16,25 @@ public class Flightless extends Birds {
                 +getHabitat()  + ", тип передвижения - " + movementType + ".";
     }
 
+    @Override
+    public void eat() {
+        System.out.println("Нелетающие птицы едят растительную пищу, насекомых и рыбу.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Нелетающие птицы передвигаются в поисках еды.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Нелетающие птицы спят.");
+    }
+
+    @Override
+    public void hunt() {
+        System.out.println("Нелетающие птицы охотятся на насекомых и рыбу.");
+    }
     public void walk () {
         System.out.println("Нелетающие птицы передвигаются по земле.");
     }
